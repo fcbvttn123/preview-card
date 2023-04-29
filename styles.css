@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+:root {
+    --Softblue: hsl(215, 51%, 70%);
+
+    --Cyan: hsl(178, 100%, 50%);
+
+    --Very-dark-blue-mainBG: hsl(217, 54%, 11%);
+    /* (main BG) */
+
+    --Very-dark-blue-cardBG: hsl(216, 50%, 16%);
+    /* (card BG) */
+
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    /* (line) */
+
+    --White: hsl(0, 0%, 100%);
+
+    font-size: 18px;
+
+    font-family: 'Outfit', sans-serif;
+
+    --font-weight-light: 300;
+
+    --font-weight-medium: 400;
+    
+    --font-weight-bold: 600;
+}
+
+body {
+    background-color: var(--Very-dark-blue-mainBG);
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Very-dark-blue-mainBG);
+
+    display: flex;
+    align-items: center;
+}
+
+/* Card */
+
+.card {
+    color: var(--White);
+    background-color: var(--Very-dark-blue-cardBG);
+
+    width: 25%;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: .5rem;
+
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: .75rem;
+}
+
+@media (max-width: 660px) {
+    .card {
+        width: 60%;
+    }
+}
+
+@media (max-width: 350px) {
+    .card {
+        width: 90%;
+    }
+}
+
+.card .title {
+    font-weight: var(--font-weight-bold);
+    font-size: 1.2rem;
+}
+
+.card .subtitle {
+    font-weight: var(--font-weight-light);
+    color: var(--Softblue);
+}
+
+.card a {
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.card a:hover {
+    color: var(--Cyan);
+}
+
+/* Card - main img section */
+
+.card .main-img {
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.card .main-img .img-equilibrium {
+    
+    height: 100%;
+    width: 100%;
+
+    border-radius: .5rem;
+
+}
+
+.card .main-img :is(.overlay, .view-icon) {
+    display: none;
+}
+
+.card .main-img:hover .overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border-radius: .5rem;
+
+    background-color: var(--Cyan);
+    z-index: 2;
+    opacity: .3;
+    
+    transition: all .3s;
+}
+
+.card .main-img:hover .view-icon {
+    display: block;
+    position: absolute;
+    width: 10%;
+    aspect-ratio: 1/1;
+    left: calc((100% - 10%)/2);
+    top: calc((100% - 10%)/2);
+    transition: all .3s;
+}
+
+/* Card - sub-title section */
+
+.card > .subtitle {
+    width: 100%;
+}
+
+/* Card -  eth and time section */
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    column-gap: .3rem;
+}
+
+.card .eth-and-time {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .eth-name {
+    color: var(--Cyan);
+}
+
+/* Card -  divide line */
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--Very-dark-blue-line);
+}
+
+/* Card -  creation section */
+
+.card .creation {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.card .creation .avt-icon {
+    width: 10%;
+    min-width: 25px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+}
+
+.card .creation .full-name {
+    color: var(--White);
+}
+
+.card .creation .full-name:hover {
+    color: var(--Cyan);
+}
